@@ -30,7 +30,7 @@ public class RemoveCmd extends LibraryCommand {
     public RemoveCmd(String argumentInput) {
         super(CommandType.REMOVE, argumentInput);
         this.argumentInput = argumentInput;
-        this.argumentInputArray = argumentInput.split(Utils.EMPTY_SPACE);
+        this.argumentInputArray = argumentInput.split(Utils.WHITE_SPACE);
     }
 
     /** Override function of parseArgument which checks if the argumentInput is valid.
@@ -43,7 +43,7 @@ public class RemoveCmd extends LibraryCommand {
     @Override
     protected boolean parseArguments(String argumentInput) {
         boolean isParsedArgument = false;
-        String[] arrayArgumentInput = argumentInput.split(Utils.EMPTY_SPACE);
+        String[] arrayArgumentInput = argumentInput.split(Utils.WHITE_SPACE);
         if ((arrayArgumentInput[0].equals(Utils.TITLE) || arrayArgumentInput[0].equals(Utils.AUTHOR)) && (arrayArgumentInput.length > 1)) {
             isParsedArgument = true;
         }
@@ -70,144 +70,113 @@ public class RemoveCmd extends LibraryCommand {
         if (data.getBookData().isEmpty()) {
             System.out.println(Utils.THE_LIBRARY_HAS_NO_BOOK_ENTRIES + Utils.PLEASE_IMPORT_LIBRARY);
         }
+        generalRemove(list_of_books, argumentInputArray[0]);
 
+        /**
         if(argumentInputArray[0].equals(Utils.TITLE)) {
             generalHelperRemoveTitle(list_of_books);
         } else if (argumentInputArray[0].equals(Utils.AUTHOR)) {
             generalHelperRemoveAuthors(list_of_books);
-        }
+        }*/
 
     }
 
     /** ######################### HELPER FUNCTIONS ######################### */
-
-    /** __________________ FUNCTIONS TO ELIMINATE BY TITLE __________________*/
-    /** Helper function which organizes the elimination of the title in the list
-     *  which is exactly equal to the one input. It is case sensitive and it
-     *  assumes there are no books repeated (it eliminates just one and the
-     *  first that matches.
+    /** Helper function which organizes the elimination of books.
+     *  It gets a reference string to remove it from the argument input and
+     *  used the function remover to determine the number of books that have
+     *  been eliminated and at the same time, that remover is the one in
+     *  charge of removing them.
      *
-     *  It uses a string called removeTitle which is used as reference to eliminate
-     *  the first command word and the first space to get the clean title of the
-     *  book that wants to be eliminated.
-     *
-     * @param list_of_books takes a list with all the books loaded
+     * @param list_of_books takes the list with all the books loaded.
+     * @param typeRemove it is always equal to AUTHOR or TITLE and it determines
+     *                   which eliminating method is used.
      */
-    private void generalHelperRemoveTitle(List<BookEntry> list_of_books) {
-        String removeTitle = Utils.TITLE + Utils.EMPTY_SPACE;
-        String cleanArgument = argumentInput.substring(removeTitle.length());
-        int counter = removeTitle(list_of_books, cleanArgument);
+    private void generalRemove (List<BookEntry> list_of_books, String typeRemove) {
+        String removeReferenceString = "";
+        String cleanArgument;
+        int counter = 0;
 
-        if(counter == 0) {
-            System.out.println(cleanArgument + ": not found.");
+        switch (typeRemove) {
+            case Utils.TITLE:
+                removeReferenceString = Utils.TITLE + Utils.WHITE_SPACE;
+                break;
+            case Utils.AUTHOR:
+                removeReferenceString = Utils.AUTHOR + Utils.WHITE_SPACE;
+                break;
         }
+
+        cleanArgument = argumentInput.substring(removeReferenceString.length());
+        counter = remover(list_of_books, typeRemove, cleanArgument, counter);
+        printerOfResults(typeRemove, cleanArgument, counter);
     }
 
-    /** Helper function which searches and eliminates the titles.
+    /** Helper function which searches and eliminates depending on the type of removed that it is
+     *  asked (TITLE or AUTHOR).
      *
-     * @param list_of_books takes the list with all the books loaded
+     * @param list_of_books takes the list with all the books loaded.
+     * @param typeRemove it is always equal to AUTHOR or TITLE and it determines
+     *                   which eliminating method is used.
      * @param cleanArgument takes the cleaned title of the book which
-     *                      is going to be eliminated
-     * @return the number of books that have been eliminated and updates
-     *                      the list of books loaded.
-     */
-    private int removeTitle(List<BookEntry> list_of_books, String cleanArgument) {
-        int counter = 0;
-        /** _________________________ ITERATOR VERSION _________________________*/
-        Iterator<BookEntry> titleRemover = list_of_books.iterator();
-        while (titleRemover.hasNext()) {
-            if (cleanArgument.equals(titleRemover.next().getTitle())) {
-                titleRemover.remove();
-                System.out.printf( cleanArgument + ": removed successfully.");
-                counter++;
-                break;
-            }
-        }
+     *                   is going to be eliminated.
+     * @param counter this is the number of books that have been eliminated.
 
-        /** _________________________ FOR LOOP VERSION  _________________________*/
-        /**
-        for (int i = 0; i < list_of_books.size(); i++) {
-            if (cleanArgument.equals(list_of_books.get(i).getTitle())) {
-                list_of_books.remove(i);
-                System.out.printf( cleanArgument + ": removed successfully.");
-                counter++;
+     * @return the number of books that have been eliminated and updates
+     *                   the list of books loaded.
+     */
+    private int remover (List<BookEntry> list_of_books, String typeRemove, String cleanArgument, int counter) {
+        Iterator<BookEntry> removerFromListOfBooks = list_of_books.iterator();
+        switch (typeRemove) {
+            case Utils.TITLE:
+                while (removerFromListOfBooks.hasNext()) {
+                    if (cleanArgument.equals(removerFromListOfBooks.next().getTitle())) {
+                        removerFromListOfBooks.remove();
+                        System.out.printf(cleanArgument + ": removed successfully.");
+                        counter++;
+                        break;
+                    }
+                }
                 break;
-            }
-        } */
+
+            case Utils.AUTHOR:
+                while (removerFromListOfBooks.hasNext()) {
+                    String[] authors = removerFromListOfBooks.next().getAuthors();
+                    for (int k = 0; k < authors.length; k++) {
+                        if (cleanArgument.equals(authors[k])) {
+                            removerFromListOfBooks.remove();
+                            counter++;
+                        }
+                    }
+                }
+                break;
+
+        }
 
         return counter;
     }
 
-    /** ________________ FUNCTIONS TO ELIMINATE BY AUTHOR _________________*/
-    /** Helper function which organizes the elimination of all the books in the list
-     *  that have been written by the author who was input. It assumes there could be
-     *  more that one book from the same author. It is case sensitive.
+    /** Helper function which prints the final message after removing books of the library
      *
-     *  It uses a string called removeAuthor which is used as reference to
-     *  clean the argument and remove the word AUTHOR and the following space.
-     *
-     * @param list_of_books takes a list with all the books loaded
+     * @param typeRemove it is always equal to AUTHOR or TITLE and it determines
+     *                   which eliminating method is used.
+     * @param cleanArgument takes the cleaned title of the book which
+     *                   is going to be eliminated.
+     * @param counter this is the number of books that have been eliminated.
      */
-    private void generalHelperRemoveAuthors(List<BookEntry> list_of_books) {
-        String removeAuthor = Utils.AUTHOR + Utils.EMPTY_SPACE;
-        String cleanArgument = argumentInput.substring(removeAuthor.length());
-
-        int counter = removeAuthors(cleanArgument.toUpperCase(), list_of_books);
-
+    private void printerOfResults(String typeRemove, String cleanArgument, int counter) {
+        /** ____________________ PRINTING THE RESULTS ____________________ */
         if (counter == 0) {
-            System.out.printf("0 books removed for author: " + cleanArgument);
-        } else {
+            switch (typeRemove) {
+                case Utils.TITLE:
+                    System.out.println(cleanArgument + ": not found.");
+                    break;
+                case Utils.AUTHOR:
+                    System.out.printf("0 books removed for author: " + cleanArgument);
+                    break;
+            }
+        } else if (typeRemove.equals(Utils.AUTHOR)) {
             System.out.println(counter + " books removed for author: " + cleanArgument);
         }
     }
-
-    private int removeAuthors(String cleanArgument, List<BookEntry> list_of_books) {
-        /** _________________________ ITERATOR VERSION _________________________*/
-        Iterator<BookEntry> authorRemover = list_of_books.iterator();
-        int counter = 0;
-        while (authorRemover.hasNext()) {
-            String[] authors = authorRemover.next().getAuthors();
-            authors = authorsToCapital(authors);
-            for (int k = 0; k < authors.length; k++) {
-                if (cleanArgument.equals(authors[k])) {
-                    authorRemover.remove();
-                    counter++;
-                }
-            }
-        }
-
-        /** _________________________ FOR LOOP VERSION  _________________________*/
-        /**
-         for (int i = 0; i < list_of_books.size(); i++) {
-            String[] authors = list_of_books.get(i).getAuthors();
-            authors = authorsToCapital(authors);
-            for (int k = 0; k < authors.length; k++) {
-                if (cleanArgument.toUpperCase().equals(authors[k])) {
-                    list_of_books.remove(i);
-                    counter++;
-                }
-            }
-         }*/
-        return counter;
-    }
-
-
-
-
-
-
-    /** __________ FUNCTION TO CAPITALIZE ALL THE AUTHORS __________*/
-    /**
-     *
-     * @param authors gets and authors array
-     * @return the same authors array with all elements capitalize
-     */
-    private String[] authorsToCapital (String[] authors) {
-        for (int i = 0; i < authors.length; i++) {
-            authors[i] = authors[i].toUpperCase();
-        }
-        return authors;
-    }
-
 
 }

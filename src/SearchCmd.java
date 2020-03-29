@@ -16,7 +16,7 @@ public class SearchCmd extends LibraryCommand {
 
     private String argumentInput;
 
-    /** Constructor of the class SearchCmd. It gets an argumentInput, which must be just one word
+    /** Constructor of the class SearchCmd. It gets an argumentInput which must be just one word.
      *
      * @param argumentInput argument input as expected by the extending subclass.
      * @throws IllegalArgumentException if given arguments are invalid
@@ -43,8 +43,8 @@ public class SearchCmd extends LibraryCommand {
     protected boolean parseArguments(String argumentInput){
         boolean isParseArgument = false;
 
-        if (!argumentInput.endsWith(Utils.EMPTY_SPACE)) {
-            String[] numberOfWords = argumentInput.split(Utils.EMPTY_SPACE);
+        if (!argumentInput.endsWith(Utils.WHITE_SPACE)) {
+            String[] numberOfWords = argumentInput.split(Utils.WHITE_SPACE);
 
             if (numberOfWords.length == 1 && !argumentInput.isBlank()) {
                 isParseArgument = true;
@@ -68,7 +68,10 @@ public class SearchCmd extends LibraryCommand {
         /** _________________________ ERROR CHECKING _________________________ */
         Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
 
-        /** _________________________ EXECUTE DEFINITION _________________________ */
+
+        /** _________________________ ERROR CHECKING _________________________ */
+        Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
+
 
         List<BookEntry> list_of_books = data.getBookData();
         List<String> booksFound = new ArrayList<>();
@@ -94,13 +97,14 @@ public class SearchCmd extends LibraryCommand {
      *  Transforming everything to Upper case, in order to make it case insensitive.
      *  The results are added to booksFound list.
      *
-     * @param list_of_books
-     * @param booksFound
+     * @param list_of_books takes the list with all the books loaded.
+     * @param booksFound the list which contains just the books that satisfy
+     *                   the search.
      */
     private void searchBooks (List<BookEntry> list_of_books, List<String> booksFound) {
         for (int i = 0; i < list_of_books.size(); i++) {
             /* Get each of the titles splitted and in uppercase */
-            String[] split_title = list_of_books.get(i).getTitle().toUpperCase().split(Utils.EMPTY_SPACE);
+            String[] split_title = list_of_books.get(i).getTitle().toUpperCase().split(Utils.WHITE_SPACE);
             String searchedTitle = argumentInput.toUpperCase();
             for (int k = 0; k < split_title.length; k++) {
                 if (searchedTitle.equals(split_title[k])) {

@@ -1,18 +1,26 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
+/**
+ *  GroupCmd is a class which defines the command GROUP in the program and returns
+ *  a list of books which have been sorted and divided by the first letter of their
+ *  title or by their author.
+ *
+ *  It displays an organized list of all the books in the library
+ *
+ *  The command options are:
+ *      GROUP TITLE         - Which displays the titles grouped by the first letter of the title.
+ *      GROUP AUTHOR        - Which displays the titles grouped by author, if a book is
+ *                              written by two or more authors, it will appear more than once.
+ *                              Not all the authors start with capital but it is fixed to be
+ *                              case insensitive so that order is kept.
+ */
 public class GroupCmd extends LibraryCommand {
-
-
 
     private String argumentInput;
     private List<List<String>> list_of_titles;
 
-    /**
-     * Create the specified command and initialise it with
-     * the given command argument.
+    /** Constructor of the class GroupCmd. It gets an argumentInput which must be just one word
+     *  and it must be only equal to TITLE or AUTHOR
      *
      * @param argumentInput argument input as expected by the extending subclass.
      * @throws IllegalArgumentException if given arguments are invalid
@@ -20,7 +28,6 @@ public class GroupCmd extends LibraryCommand {
      */
     public GroupCmd(String argumentInput) {
         super(CommandType.GROUP, argumentInput);
-
         this.argumentInput = argumentInput;
         this.list_of_titles = new ArrayList<>();        // LIST OF LISTS
         for (int i = 0; i < Utils.ALPHABET_LENGTH; i++) {
@@ -28,7 +35,9 @@ public class GroupCmd extends LibraryCommand {
         }
     }
 
-    /**
+    /** _________________________ OVERRIDE FUNCTIONS _________________________*/
+    /** Override function of parseArgument which checks if the argumentInput is valid
+     *  It can only accept one word equal to TITLE or AUTHOR
      *
      * @param argumentInput argument input for this command
      * @return a boolean value indicating if the input argument is valid
@@ -42,36 +51,48 @@ public class GroupCmd extends LibraryCommand {
         return isArgumentParsed;
     }
 
-    /**
+    /** Override functions of execute which defines what this command does.
+     *  Data cannot be null.
      *
      * @param data book data to be considered for command execution.
      */
     @Override
     public void execute(LibraryData data) {
-        if (data != null) {
-            if (data.getBookData().size() != 0) {
-                List<BookEntry> list_of_books = data.getBookData();
-                if(argumentInput.equals(Utils.TITLE)) {
-                    System.out.println(Utils.GROUP_BY + Utils.TITLE);
-                    groupTITLE(list_of_books);
-                } else if (argumentInput.equals(Utils.AUTHOR)) {
-                    System.out.println(Utils.GROUP_BY + Utils.AUTHOR);
-                    groupAUTHOR(list_of_books);
-                }
-            } else {
-                System.out.println(Utils.THE_LIBRARY_HAS_NO_BOOK_ENTRIES);
+
+        /** _________________________ ERROR CHECKING _________________________ */
+        Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
+
+        /** _________________________ ERROR CHECKING _________________________ */
+        if (!data.getBookData().isEmpty()) {
+            List<BookEntry> list_of_books = data.getBookData();
+            if(argumentInput.equals(Utils.TITLE)) {
+                System.out.println(Utils.GROUP_BY + Utils.TITLE);
+                groupTITLE(list_of_books);
+            } else if (argumentInput.equals(Utils.AUTHOR)) {
+                System.out.println(Utils.GROUP_BY + Utils.AUTHOR);
+                groupAUTHOR(list_of_books);
             }
         } else {
-            throw new NullPointerException(Utils.ERROR_DATA_NULL);
+            System.out.println(Utils.THE_LIBRARY_HAS_NO_BOOK_ENTRIES);
         }
+
     }
 
     /** __________ FUNCTION TO GROUP BY TITLE __________*/
     private void groupTITLE (List<BookEntry> list_of_books){
-        // ADD AND CLASSIFY IN LIST_OF_TITLES EACH TITLE
+
+        TreeMap<Integer,String> titleClasifier = new TreeMap<>();
+
         for (int i = 0; i < list_of_books.size(); i++) {
+            titleClasifier.put((int) list_of_books.get(i).getTitle().charAt(0), list_of_books.get(i).getTitle());
+        }
+
+
+
+        /**
+         * for (int i = 0; i < list_of_books.size(); i++) {
             String title = list_of_books.get(i).getTitle();
-            list_of_titles.get(title.charAt(0)-65).add(title);
+            list_of_titles.get(title.charAt(0)).add(title);
         }
 
         for (int i = 0; i < list_of_titles.size(); i++) {
@@ -82,6 +103,7 @@ public class GroupCmd extends LibraryCommand {
                 }
             }
         }
+         */
     }
     /** __________ FUNCTION TO GROUP BY AUTHOR __________*/
     private void groupAUTHOR (List<BookEntry> list_of_books){

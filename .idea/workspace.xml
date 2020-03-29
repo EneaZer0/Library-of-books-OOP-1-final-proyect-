@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21178750-99cf-42d1-87e8-a6e455d04a36" name="Default Changelist" comment="" />
+    <list default="true" id="21178750-99cf-42d1-87e8-a6e455d04a36" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myLibrary/BookEntry-DESKTOP-P2LTMGC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myLibrary/LibraryCommand-DESKTOP-P2LTMGC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myLibrary/META-INF/myLibrary.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myLibrary/RemoveCmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myLibrary/RemoveCmd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GroupCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GroupCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RemoveCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RemoveCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +28,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YxYHFvUUrqEvDt7pf1F7DM0b5y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -56,15 +70,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddCmdBasicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myLibrary" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AddCmdBasicTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in myLibrary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myLibrary" />
       <option name="PACKAGE_NAME" value="" />
@@ -73,20 +78,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookEntryBasicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RemoveCmdBasicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myLibrary" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BookEntryBasicTest" />
+      <option name="MAIN_CLASS_NAME" value="RemoveCmdBasicTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookEntryBasicTest.testGetISBN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RemoveCmdBasicTest.testExecuteRemoveAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myLibrary" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BookEntryBasicTest" />
-      <option name="METHOD_NAME" value="testGetISBN" />
+      <option name="MAIN_CLASS_NAME" value="RemoveCmdBasicTest" />
+      <option name="METHOD_NAME" value="testExecuteRemoveAuthor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RemoveCmdBasicTest.testExecuteRemoveAuthorConsoleOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myLibrary" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RemoveCmdBasicTest" />
+      <option name="METHOD_NAME" value="testExecuteRemoveAuthorConsoleOut" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,9 +111,9 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in myLibrary" />
-        <item itemvalue="JUnit.AddCmdBasicTest" />
-        <item itemvalue="JUnit.BookEntryBasicTest.testGetISBN" />
-        <item itemvalue="JUnit.BookEntryBasicTest" />
+        <item itemvalue="JUnit.RemoveCmdBasicTest" />
+        <item itemvalue="JUnit.RemoveCmdBasicTest.testExecuteRemoveAuthorConsoleOut" />
+        <item itemvalue="JUnit.RemoveCmdBasicTest.testExecuteRemoveAuthor" />
       </list>
     </recent_temporary>
   </component>
@@ -136,21 +151,43 @@
       <workItem from="1585397622000" duration="648000" />
       <workItem from="1585405774148" duration="24819000" />
       <workItem from="1585478188828" duration="9824000" />
+      <workItem from="1585488234407" duration="92000" />
+      <workItem from="1585488336877" duration="13000" />
+      <workItem from="1585488361540" duration="5426000" />
+      <workItem from="1585495638793" duration="6406000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Library-of-books-OOP-1-final-proyect-" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585480293672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585480293672" />
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585407066074">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585493025525">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585407066074" />
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585493025525" />
     <state x="490" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584059737326">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -167,58 +204,62 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647018366" />
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1585488043248">
+    <state width="1875" height="145" key="GridCell.Tab.0.bottom" timestamp="1585500858122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585488043248" />
-    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1585488043248">
+    <state width="1875" height="145" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500858122" />
+    <state width="1875" height="145" key="GridCell.Tab.0.center" timestamp="1585500858122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585488043248" />
-    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1585488043248">
+    <state width="1875" height="145" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500858122" />
+    <state width="1875" height="145" key="GridCell.Tab.0.left" timestamp="1585500858121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585488043248" />
-    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1585488043248">
+    <state width="1875" height="145" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500858121" />
+    <state width="1875" height="145" key="GridCell.Tab.0.right" timestamp="1585500858122">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585488043248" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585484782047">
+    <state width="1875" height="145" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500858122" />
+    <state width="1875" height="347" key="GridCell.Tab.1.bottom" timestamp="1585500211141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585484782047" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585484782047">
+    <state width="1875" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500211141" />
+    <state width="1875" height="347" key="GridCell.Tab.1.center" timestamp="1585500211140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585484782047" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585484782047">
+    <state width="1875" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500211140" />
+    <state width="1875" height="347" key="GridCell.Tab.1.left" timestamp="1585500211140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585484782047" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585484782047">
+    <state width="1875" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500211140" />
+    <state width="1875" height="347" key="GridCell.Tab.1.right" timestamp="1585500211141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585484782047" />
-    <state x="346" y="73" key="SettingsEditor" timestamp="1585487076394">
+    <state width="1875" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585500211141" />
+    <state x="346" y="73" key="SettingsEditor" timestamp="1585493747274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1643" y="409" key="SettingsEditor/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886443194" />
-    <state x="346" y="73" key="SettingsEditor/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585487076394" />
-    <state x="581" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1585478208806">
+    <state x="346" y="73" key="SettingsEditor/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585493747274" />
+    <state x="581" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1585495640113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1455" y="591" key="com.intellij.ide.util.TipDialog/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886122103" />
     <state x="414" y="259" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1584055797182" />
     <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647012881" />
-    <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585478208806" />
+    <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585495640113" />
     <state x="-1422" y="660" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583886064920">
       <screen x="-1920" y="353" width="1536" height="800" />
     </state>
     <state x="-1422" y="660" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886064920" />
-    <state x="690" y="275" key="extract.method.dialog" timestamp="1585486988000">
+    <state x="2468" y="338" width="579" height="526" key="dock-window-1" timestamp="1585499227354">
+      <screen x="1920" y="305" width="1360" height="728" />
+    </state>
+    <state x="2468" y="338" width="579" height="526" key="dock-window-1/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585499227354" />
+    <state x="690" y="275" key="extract.method.dialog" timestamp="1585493279059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="extract.method.dialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585486988000" />
+    <state x="690" y="275" key="extract.method.dialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585493279059" />
     <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1585406953965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -231,5 +272,9 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="4" y="201" key="run.anything.popup/0.0.1368.872@0.0.1368.872" timestamp="1583980889741" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585491830904">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585491830904" />
   </component>
 </project>

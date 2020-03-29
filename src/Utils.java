@@ -9,7 +9,7 @@ public class Utils {
     /**
      *  This is a constant of a white space
      */
-    public static final String EMPTY_SPACE = " ";
+    public static final String WHITE_SPACE = " ";
     /**
      *  This is a constant that sets the spaces at the GROUP command, in front of the titles or titles
      */
@@ -62,6 +62,10 @@ public class Utils {
      *  String used in ListCmd as an accepted command
      */
     public static final String LONG = "long";
+    /**
+     *  String used in Group for those books that start with numbers
+     */
+    public static final String GROUP_NUMBERS = "[0-9]";
 
     /** __________________________________ LOGIC CONSTANTS__________________________________ */
 
