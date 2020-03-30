@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -68,11 +69,6 @@ public class SearchCmd extends LibraryCommand {
         /** _________________________ ERROR CHECKING _________________________ */
         Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
 
-
-        /** _________________________ ERROR CHECKING _________________________ */
-        Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
-
-
         List<BookEntry> list_of_books = data.getBookData();
         List<String> booksFound = new ArrayList<>();
 
@@ -81,7 +77,11 @@ public class SearchCmd extends LibraryCommand {
         }
 
         /* Add to booksFound list, the results of the search of titles which are valid */
-        searchBooks(list_of_books, booksFound);
+        String searchedTitle = argumentInput.toUpperCase();
+        if (searchedTitle.endsWith(Utils.WHITE_SPACE) || searchedTitle.startsWith(Utils.WHITE_SPACE)) {
+            throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
+        }
+        searchBooks(list_of_books, booksFound, searchedTitle);
 
         if (booksFound.size() == 0) {
             System.out.println("No hits found for search term: " + argumentInput);
@@ -101,18 +101,18 @@ public class SearchCmd extends LibraryCommand {
      * @param booksFound the list which contains just the books that satisfy
      *                   the search.
      */
-    private void searchBooks (List<BookEntry> list_of_books, List<String> booksFound) {
-        for (int i = 0; i < list_of_books.size(); i++) {
-            /* Get each of the titles splitted and in uppercase */
-            String[] split_title = list_of_books.get(i).getTitle().toUpperCase().split(Utils.WHITE_SPACE);
-            String searchedTitle = argumentInput.toUpperCase();
-            for (int k = 0; k < split_title.length; k++) {
-                if (searchedTitle.equals(split_title[k])) {
-                    booksFound.add(list_of_books.get(i).getTitle());
-                    break;
-                }
+    private void searchBooks(List<BookEntry> list_of_books, List<String> booksFound, String searchedTitle) {
+        Iterator<BookEntry> titlesIterator = list_of_books.iterator();
+
+        while (titlesIterator.hasNext()) {
+            String title = titlesIterator.next().getTitle();
+            String workTitle = title.toUpperCase();
+            if (workTitle.contains(searchedTitle)) {
+                booksFound.add(title);
             }
         }
     }
+
+
 
 }
