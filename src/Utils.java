@@ -73,6 +73,18 @@ public class Utils {
      *  Integer which is equal to the length of the full alphabet
      */
     public static final int ALPHABET_LENGTH = 26;
+    /**
+     *  Integer which is equal to the number of the groups which organize titles with numeric values
+     */
+    public static final int GROUP_OF_NUMBERS = 1;
+    /**
+     *  Integer which is equal to the ascii value of the letter "A"
+     */
+    public static final int ASCII_CASE_FOR_A = 65;
+    /**
+     *  Integer which is equal to the ascii value of the letter "Z"
+     */
+    public static final int ASCII_CASE_FOR_Z = 90;
 
     /** __________________________________ ERROR MESSAGES __________________________________ */
 
