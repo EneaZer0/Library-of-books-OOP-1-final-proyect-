@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="21178750-99cf-42d1-87e8-a6e455d04a36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/myLibrary/GroupCmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myLibrary/GroupCmd.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myLibrary/SearchCmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myLibrary/SearchCmd.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchCmd.java" afterDir="false" />
     </list>
@@ -57,7 +56,7 @@
       <recent name="C:\Users\migue\OneDrive - University of Edinburgh\EDINBURGH\UNI\SEMESTER 2\OOP\Assignment Part III\LIBRARY\myLibrary\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in myLibrary">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="myLibrary" />
@@ -104,8 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in myLibrary" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in myLibrary" />
         <item itemvalue="JUnit.SearchCmdBasicTest.testExecuteFindExactMatch" />
         <item itemvalue="JUnit.RemoveCmdBasicTest" />
         <item itemvalue="JUnit.RemoveCmdBasicTest.testExecuteRemoveAuthorConsoleOut" />
@@ -153,6 +152,8 @@
       <workItem from="1585507315739" duration="10226000" />
       <workItem from="1585523532549" duration="7342000" />
       <workItem from="1585571624741" duration="3524000" />
+      <workItem from="1585581789509" duration="1465000" />
+      <workItem from="1585583284868" duration="19000" />
     </task>
     <servers />
   </component>
@@ -203,22 +204,22 @@
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647018366" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585520307497" />
-    <state width="1875" height="273" key="GridCell.Tab.0.bottom" timestamp="1585577295867">
+    <state width="1875" height="273" key="GridCell.Tab.0.bottom" timestamp="1585583273097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585577295867" />
-    <state width="1875" height="273" key="GridCell.Tab.0.center" timestamp="1585577295866">
+    <state width="1875" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
+    <state width="1875" height="273" key="GridCell.Tab.0.center" timestamp="1585583273097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585577295866" />
-    <state width="1875" height="273" key="GridCell.Tab.0.left" timestamp="1585577295866">
+    <state width="1875" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
+    <state width="1875" height="273" key="GridCell.Tab.0.left" timestamp="1585583273097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585577295866" />
-    <state width="1875" height="273" key="GridCell.Tab.0.right" timestamp="1585577295867">
+    <state width="1875" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
+    <state width="1875" height="273" key="GridCell.Tab.0.right" timestamp="1585583273097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585577295867" />
+    <state width="1875" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
     <state width="1875" height="452" key="GridCell.Tab.1.bottom" timestamp="1585576794017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -244,13 +245,13 @@
     </state>
     <state x="-1643" y="409" key="SettingsEditor/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886443194" />
     <state x="346" y="73" key="SettingsEditor/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585493747274" />
-    <state x="581" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1585571651282">
+    <state x="581" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1585583286879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1455" y="591" key="com.intellij.ide.util.TipDialog/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886122103" />
     <state x="414" y="259" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1584055797182" />
     <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647012881" />
-    <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585571651282" />
+    <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583286879" />
     <state x="-1422" y="660" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583886064920">
       <screen x="-1920" y="353" width="1536" height="800" />
     </state>

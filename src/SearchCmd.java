@@ -78,9 +78,13 @@ public class SearchCmd extends LibraryCommand {
 
         /* Add to booksFound list, the results of the search of titles which are valid */
         String searchedTitle = argumentInput.toUpperCase();
+
+        /** THIS CHECKS IF THE WORD IS NOTHING ESE THAT A WORD (WHICH MEANS IT IS NO ALLOWED TO
+         * ADDING A WHITE SPACE AT THE BEGINNING OR AT THE END */
         if (searchedTitle.endsWith(Utils.WHITE_SPACE) || searchedTitle.startsWith(Utils.WHITE_SPACE)) {
             throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
         }
+
         searchBooks(list_of_books, booksFound, searchedTitle);
 
         if (booksFound.size() == 0) {
