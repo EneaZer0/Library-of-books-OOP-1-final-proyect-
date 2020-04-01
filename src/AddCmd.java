@@ -61,7 +61,7 @@ public class AddCmd extends LibraryCommand {
     @Override
     public void execute(LibraryData data) {
         if (data != null) {
-            data.loadData(Paths.get(argumentInput));
+            data.loadData(Paths.get(argumentInput.trim()));
         } else {
             throw new NullPointerException(Utils.ERROR_DATA_NULL);
         }
