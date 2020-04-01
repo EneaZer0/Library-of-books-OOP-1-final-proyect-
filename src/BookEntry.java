@@ -131,33 +131,10 @@ public class BookEntry {
     public String toString() {
         return
                 title + "\n" +
-                        "by " + transformAuthor(authors) + "\n" +
-                        "Rating: " + transformRating(rating) + "\n" +
+                        "by " + Utils.transformAuthor(authors) + "\n" +
+                        "Rating: " + Utils.transformRating(rating) + "\n" +
                         "ISBN: " + ISBN + "\n" +
                         pages + " pages";
 
-    }
-
-    /** _________________________ HELPER FUNCTIONS _________________________*/
-    /** This function is in charged of transforming the authors array to be printed in the toString function
-     *
-     * @param authors correspond to the authors array who wrote the book
-     * @return a String with all the authors who wrote it in the correct format for the function toString
-     */
-    private String transformAuthor (String[] authors) {
-        String final_authors = Arrays.toString(authors);
-        final_authors = final_authors.substring(1, final_authors.length()-1);
-        return final_authors;
-    }
-
-    /** This function is in charged of transforming the rating into a String and with a determine number of decimals
-     * which can be changed in Utils class (in case it is needed). It is used in the toString function.
-     *
-     * @param rating correspond to the rating which the book received
-     * @return a String with the rating value in the format that is wanted in the toString function
-     */
-    private String transformRating (float rating) {
-        String final_rating = String.format(Utils.NUMBER_OF_DECIMALS_FORMAT, rating);
-        return final_rating;
     }
 }

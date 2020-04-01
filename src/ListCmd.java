@@ -56,14 +56,9 @@ public class ListCmd extends LibraryCommand {
 
         /** _________________________ ERROR CHECKING _________________________ */
         Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
-
+        Utils.emptyDataWarning(data);
         /** _________________________ EXECUTE DEFINITION _________________________ */
-
         List<BookEntry> list_of_books = data.getBookData();
-
-        if (data.getBookData().isEmpty()) {
-            System.out.println(Utils.THE_LIBRARY_HAS_NO_BOOK_ENTRIES  + Utils.PLEASE_IMPORT_LIBRARY);
-        }
 
         if ((argumentInput.equals(Utils.SHORT)  || argumentInput.equals(Utils.LONG) || argumentInput.isBlank()) && list_of_books.size() > 0) {
             System.out.println(list_of_books.size() + " books in library:");

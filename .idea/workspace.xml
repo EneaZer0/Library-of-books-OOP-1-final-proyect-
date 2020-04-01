@@ -4,7 +4,13 @@
     <list default="true" id="21178750-99cf-42d1-87e8-a6e455d04a36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/myLibrary/SearchCmd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myLibrary/SearchCmd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GroupCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GroupCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RemoveCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RemoveCmd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +62,7 @@
       <recent name="C:\Users\migue\OneDrive - University of Edinburgh\EDINBURGH\UNI\SEMESTER 2\OOP\Assignment Part III\LIBRARY\myLibrary\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in myLibrary">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="myLibrary" />
@@ -103,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in myLibrary" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SearchCmdBasicTest.testExecuteFindExactMatch" />
         <item itemvalue="JUnit.RemoveCmdBasicTest" />
         <item itemvalue="JUnit.RemoveCmdBasicTest.testExecuteRemoveAuthorConsoleOut" />
@@ -204,22 +210,22 @@
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647018366" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585520307497" />
-    <state width="1875" height="273" key="GridCell.Tab.0.bottom" timestamp="1585583273097">
+    <state width="1875" height="273" key="GridCell.Tab.0.bottom" timestamp="1585737875545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
-    <state width="1875" height="273" key="GridCell.Tab.0.center" timestamp="1585583273097">
+    <state width="1875" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585737875545" />
+    <state width="1875" height="273" key="GridCell.Tab.0.center" timestamp="1585737875545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
-    <state width="1875" height="273" key="GridCell.Tab.0.left" timestamp="1585583273097">
+    <state width="1875" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585737875545" />
+    <state width="1875" height="273" key="GridCell.Tab.0.left" timestamp="1585737875545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
-    <state width="1875" height="273" key="GridCell.Tab.0.right" timestamp="1585583273097">
+    <state width="1875" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585737875545" />
+    <state width="1875" height="273" key="GridCell.Tab.0.right" timestamp="1585737875545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585583273097" />
+    <state width="1875" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585737875545" />
     <state width="1875" height="452" key="GridCell.Tab.1.bottom" timestamp="1585576794017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

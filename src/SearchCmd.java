@@ -68,13 +68,10 @@ public class SearchCmd extends LibraryCommand {
 
         /** _________________________ ERROR CHECKING _________________________ */
         Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
-
+        Utils.emptyDataWarning(data);
+        /** _______________________ EXECUTE DEFINITION _______________________ */
         List<BookEntry> list_of_books = data.getBookData();
         List<String> booksFound = new ArrayList<>();
-
-        if (data.getBookData().isEmpty()) {
-            System.out.println(Utils.THE_LIBRARY_HAS_NO_BOOK_ENTRIES + Utils.PLEASE_IMPORT_LIBRARY);
-        }
 
         /* Add to booksFound list, the results of the search of titles which are valid */
         String searchedTitle = argumentInput.toUpperCase();
@@ -85,7 +82,7 @@ public class SearchCmd extends LibraryCommand {
             throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
         }
 
-        searchBooks(list_of_books, booksFound, searchedTitle);
+        Utils.searchBooks(list_of_books, booksFound, searchedTitle);
 
         if (booksFound.size() == 0) {
             System.out.println("No hits found for search term: " + argumentInput);
@@ -96,26 +93,6 @@ public class SearchCmd extends LibraryCommand {
         }
     }
 
-    /** _________________________ HELPER FUNCTIONS _________________________*/
-    /** Helper function which does the search on the list of books, checking word by word
-     *  Transforming everything to Upper case, in order to make it case insensitive.
-     *  The results are added to booksFound list.
-     *
-     * @param list_of_books takes the list with all the books loaded.
-     * @param booksFound the list which contains just the books that satisfy
-     *                   the search.
-     */
-    private void searchBooks(List<BookEntry> list_of_books, List<String> booksFound, String searchedTitle) {
-        Iterator<BookEntry> titlesIterator = list_of_books.iterator();
-
-        while (titlesIterator.hasNext()) {
-            String title = titlesIterator.next().getTitle();
-            String workTitle = title.toUpperCase();
-            if (workTitle.contains(searchedTitle)) {
-                booksFound.add(title);
-            }
-        }
-    }
 
 
 
