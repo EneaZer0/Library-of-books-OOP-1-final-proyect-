@@ -28,7 +28,7 @@ public class GroupCmd extends LibraryCommand {
      */
     public GroupCmd(String argumentInput) {
         super(CommandType.GROUP, argumentInput);
-        this.argumentInput = argumentInput;
+        this.argumentInput = argumentInput.strip();
         this.list_of_titles = new ArrayList<>();        // LIST OF LISTS
         for (int i = 0; i < Utils.ALPHABET_LENGTH + Utils.GROUP_OF_NUMBERS; i++) {
             list_of_titles.add(new ArrayList<>());      // DECLARE DE THE FULL LENGTH TO CLASSIFY THE FULL ALPHABET
@@ -45,7 +45,8 @@ public class GroupCmd extends LibraryCommand {
     @Override
     protected boolean parseArguments(String argumentInput) {
         boolean isArgumentParsed = false;
-        if (argumentInput.equals(Utils.TITLE) || argumentInput.equals(Utils.AUTHOR)) {
+        String argumentStriped = argumentInput.strip();
+        if (argumentStriped.equals(Utils.TITLE) || argumentStriped.equals(Utils.AUTHOR)) {
             isArgumentParsed = true;
         }
         return isArgumentParsed;

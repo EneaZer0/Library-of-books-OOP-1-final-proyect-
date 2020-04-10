@@ -3,7 +3,7 @@ import java.util.*;
 /**
  *  This is a class Utils which contains constants used across the project
  */
-public class Utils {
+public abstract class Utils {
 
 
     /** __________________________________ SPACING __________________________________*/
@@ -16,6 +16,10 @@ public class Utils {
      *  This is a constant that sets the spaces at the GROUP command, in front of the titles or titles
      */
     public static final String SPACING_FOR_GROUPING = "    ";
+    /**
+     *  This is a constant of a jump to next line
+     */
+    public static final String NEXT_LINE = "\n";
 
 
     /** __________________________________ FORMAT __________________________________ */
@@ -95,9 +99,25 @@ public class Utils {
      */
     public static final String ERROR_NULL = "ERROR: NullPointerException";
     /**
+     *  String which contains the Null Error Message used in most of throw new NullPointerExceptions
+     */
+    public static final String ERROR_NULL_AUTHOR = "ERROR: One or more books in the database you tried loading have null authors";
+    /**
      *  String which contains theIllegal Error Message used in most of the throw new IllegalArgumentExceptions
      */
     public static final String ERROR_ILLEGAL = "ERROR: IllegalArgumentException";
+    /**
+     *  String which contains theIllegal Error Message used when the pages of a book that is trying to be loaded is negative
+     */
+    public static final String ERROR_ILLEGAL_PAGES = "ERROR: One or more books in the database you tried loading have negative number of pages";
+    /**
+     *  String which contains theIllegal Error Message used when the rating of a book that is trying to be loaded is not valid
+     */
+    public static final String ERROR_ILLEGAL_RATING = "ERROR: One or more books in the database you tried loading have invalid ratings";
+    /**
+     *  String which contains theIllegal Error Message used when the REMOVE command is not used correctly
+     */
+    public static final String ERROR_ILLEGAL_REMOVE = "ERROR: The command REMOVE must be followed by: TITLE and the title of the book, or AUTHOR and the author of the book";
     /**
      *  String which is used commonly and indicates that something cannot be null
      */
@@ -106,6 +126,8 @@ public class Utils {
      *  Error string used in all the execute functions
      */
     public static final String ERROR_DATA_NULL = "ERROR, data cannot be null";
+
+
 
     /** ################################## HELPER FUNCTIONS ################################## */
 
@@ -182,16 +204,18 @@ public class Utils {
 
         switch (typeRemove) {
             case Utils.TITLE:
-                removeReferenceString = Utils.TITLE + Utils.WHITE_SPACE;
+                removeReferenceString = Utils.TITLE;
                 break;
             case Utils.AUTHOR:
-                removeReferenceString = Utils.AUTHOR + Utils.WHITE_SPACE;
+                removeReferenceString = Utils.AUTHOR;
                 break;
+            default:
+                throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
         }
 
-        cleanArgument = argumentInput.substring(removeReferenceString.length());
+        cleanArgument = argumentInput.strip().substring(removeReferenceString.length()).strip();
         counter = Utils.remover(list_of_books, typeRemove, cleanArgument, counter);
-        Utils.printerOfResults(typeRemove, cleanArgument, counter);
+        Utils.printerOfResults(typeRemove, cleanArgument.strip(), counter);
     }
 
     /** Helper function which searches and eliminates depending on the type of removed that it is
@@ -233,6 +257,9 @@ public class Utils {
                 }
                 break;
 
+            default:
+                throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
+
         }
 
         return counter;
@@ -256,6 +283,9 @@ public class Utils {
                 case Utils.AUTHOR:
                     System.out.printf("0 books removed for author: " + cleanArgument);
                     break;
+
+                default:
+                    throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
             }
         } else if (typeRemove.equals(Utils.AUTHOR)) {
             System.out.println(counter + " books removed for author: " + cleanArgument);
@@ -275,6 +305,10 @@ public class Utils {
             case Utils.AUTHOR:
                 System.out.println(Utils.GROUP_BY + Utils.AUTHOR);
                 break;
+
+            default:
+
+                throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
         }
     }
 
@@ -331,6 +365,9 @@ public class Utils {
                     }
                 }
                 break;
+
+            default:
+                throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
         }
     }
 
@@ -378,6 +415,9 @@ public class Utils {
                     }
                 }
                 break;
+
+            default:
+                throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
         }
     }
 

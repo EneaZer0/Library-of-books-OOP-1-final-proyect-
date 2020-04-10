@@ -24,7 +24,6 @@ public class ListCmd extends LibraryCommand {
      */
     public ListCmd(String argumentInput) {
         super(CommandType.LIST, argumentInput);
-        this.argumentInput = argumentInput;
     }
 
     /** _________________________ OVERRIDE FUNCTIONS _________________________*/
@@ -37,7 +36,8 @@ public class ListCmd extends LibraryCommand {
     @Override
     protected boolean parseArguments(String argumentInput) {
         boolean isParsedArgument = false;
-        if (argumentInput.equals(Utils.LONG)|| argumentInput.equals(Utils.SHORT) || argumentInput.isBlank()) {
+        if (argumentInput.strip().equals(Utils.LONG) || argumentInput.strip().equals(Utils.SHORT) || argumentInput.isBlank()) {
+            this.argumentInput = argumentInput;
             isParsedArgument = true;
         }
         return isParsedArgument;
@@ -59,17 +59,18 @@ public class ListCmd extends LibraryCommand {
         Utils.emptyDataWarning(data);
         /** _________________________ EXECUTE DEFINITION _________________________ */
         List<BookEntry> list_of_books = data.getBookData();
+        String argumentStriped = argumentInput.strip();
 
-        if ((argumentInput.equals(Utils.SHORT)  || argumentInput.equals(Utils.LONG) || argumentInput.isBlank()) && list_of_books.size() > 0) {
+        if ((argumentStriped.equals(Utils.SHORT)  || argumentStriped.equals(Utils.LONG) || argumentInput.isBlank()) && list_of_books.size() > 0) {
             System.out.println(list_of_books.size() + " books in library:");
 
             /** LIST short or LIST case*/
-            if (argumentInput.isBlank() || argumentInput.equals(Utils.SHORT)) {
+            if (argumentInput.isBlank() || argumentStriped.equals(Utils.SHORT)) {
                 for (int i = 0; i < list_of_books.size(); i++) {
                     System.out.println(list_of_books.get(i).getTitle());
                 }
             /** LIST long case*/
-            } else if (argumentInput.equals(Utils.LONG)) {
+            } else if (argumentStriped.equals(Utils.LONG)) {
                 for (int i = 0; i < list_of_books.size(); i++) {
                     System.out.println(list_of_books.get(i).toString() + "\n");
                 }

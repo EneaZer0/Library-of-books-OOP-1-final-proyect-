@@ -25,7 +25,6 @@ public class SearchCmd extends LibraryCommand {
      */
     public SearchCmd(String argumentInput) {
         super(CommandType.SEARCH, argumentInput);
-        this.argumentInput = argumentInput;
     }
 
     /** _________________________ OVERRIDE FUNCTIONS _________________________*/
@@ -44,13 +43,13 @@ public class SearchCmd extends LibraryCommand {
     protected boolean parseArguments(String argumentInput){
         boolean isParseArgument = false;
 
-        if (!argumentInput.endsWith(Utils.WHITE_SPACE)) {
-            String[] numberOfWords = argumentInput.split(Utils.WHITE_SPACE);
+        String[] numberOfWords = argumentInput.strip().split(Utils.WHITE_SPACE);
 
-            if (numberOfWords.length == 1 && !argumentInput.isBlank()) {
-                isParseArgument = true;
-            }
+        if ((numberOfWords.length == 1 && !argumentInput.contains(Utils.NEXT_LINE)) && !argumentInput.isBlank()) {
+            this.argumentInput = argumentInput;
+            isParseArgument = true;
         }
+
 
         return isParseArgument;
     }
@@ -74,13 +73,7 @@ public class SearchCmd extends LibraryCommand {
         List<String> booksFound = new ArrayList<>();
 
         /* Add to booksFound list, the results of the search of titles which are valid */
-        String searchedTitle = argumentInput.toUpperCase();
-
-        /** THIS CHECKS IF THE WORD IS NOTHING ESE THAT A WORD (WHICH MEANS IT IS NO ALLOWED TO
-         * ADDING A WHITE SPACE AT THE BEGINNING OR AT THE END */
-        if (searchedTitle.endsWith(Utils.WHITE_SPACE) || searchedTitle.startsWith(Utils.WHITE_SPACE)) {
-            throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
-        }
+        String searchedTitle = argumentInput.strip().toUpperCase();
 
         Utils.searchBooks(list_of_books, booksFound, searchedTitle);
 

@@ -4,7 +4,7 @@ import java.util.Objects;
 /**
  * Immutable class encapsulating data for a single book entry.
  */
-public class BookEntry {
+public final class BookEntry {
 
 
 
@@ -33,20 +33,20 @@ public class BookEntry {
         Objects.requireNonNull(authors,"The authors" + Utils.NOT_NULL);
         Objects.requireNonNull(ISBN,"The ISBN" + Utils.NOT_NULL);
         for (int i = 0; i < authors.length; i++) {
-            if (authors == null) {
-                throw new NullPointerException(Utils.ERROR_NULL);
+            if (authors[i] == null) {
+                throw new NullPointerException(Utils.ERROR_NULL_AUTHOR);
             }
         }
         if (!(rating >= 0 && rating <= 5)) {
-            throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
+            throw new IllegalArgumentException(Utils.ERROR_ILLEGAL_RATING);
         }
         if (pages < 0) {
-            throw new IllegalArgumentException(Utils.ERROR_ILLEGAL);
+            throw new IllegalArgumentException(Utils.ERROR_ILLEGAL_PAGES);
         }
 
         /** ____________________ CONSTRUCTOR DEFINITIONS -____________________ */
         this.title = title;
-        this.authors = authors;
+        this.authors = authors.clone();
         this.ISBN = ISBN;
         this.rating = rating;
         this.pages = pages;
@@ -67,7 +67,7 @@ public class BookEntry {
      * @return the author of the book
      */
     public String[] getAuthors() {
-        return authors;
+        return authors.clone();
     }
 
     /** This is a function which returns the ratings of a BookEntry Object

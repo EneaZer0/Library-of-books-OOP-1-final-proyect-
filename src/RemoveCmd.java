@@ -29,8 +29,6 @@ public class RemoveCmd extends LibraryCommand {
      */
     public RemoveCmd(String argumentInput) {
         super(CommandType.REMOVE, argumentInput);
-        this.argumentInput = argumentInput;
-        this.argumentInputArray = argumentInput.split(Utils.WHITE_SPACE);
     }
 
     /** Override function of parseArgument which checks if the argumentInput is valid.
@@ -43,8 +41,12 @@ public class RemoveCmd extends LibraryCommand {
     @Override
     protected boolean parseArguments(String argumentInput) {
         boolean isParsedArgument = false;
-        String[] arrayArgumentInput = argumentInput.split(Utils.WHITE_SPACE);
-        if ((arrayArgumentInput[0].equals(Utils.TITLE) || arrayArgumentInput[0].equals(Utils.AUTHOR)) && (arrayArgumentInput.length > 1)) {
+
+
+        argumentInputArray = argumentInput.strip().split(Utils.WHITE_SPACE);
+        if ((argumentInputArray[0].equals(Utils.TITLE) || argumentInputArray[0].equals(Utils.AUTHOR)) && (argumentInputArray.length > 1)) {
+            this.argumentInput = argumentInput;
+            this.argumentInputArray = argumentInput.strip().split(Utils.WHITE_SPACE);
             isParsedArgument = true;
         }
         return isParsedArgument;

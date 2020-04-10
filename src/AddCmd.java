@@ -1,4 +1,5 @@
 import java.nio.file.Paths;
+import java.util.Objects;
 
 /**
  *  AddCmd is a class which defines the command ADD in the program. It
@@ -29,7 +30,6 @@ public class AddCmd extends LibraryCommand {
      */
     public AddCmd(String argumentInput) {
         super(CommandType.ADD, argumentInput);
-        this.argumentInput = argumentInput;
     }
 
     /** _________________________ OVERRIDE FUNCTIONS _________________________*/
@@ -45,8 +45,9 @@ public class AddCmd extends LibraryCommand {
         boolean isArgumentParsed = false;
         if (!argumentInput.isBlank()) {
             // Substring which just takes last characters corresponding to the format
-            String formatString = argumentInput.substring(argumentInput.length() - Utils.FORMAT.length());
+            String formatString = argumentInput.strip().substring(argumentInput.strip().length() - Utils.FORMAT.length());
             if (formatString.equals(Utils.FORMAT)) {
+                this.argumentInput = argumentInput;
                 isArgumentParsed = true;
             }
         }
@@ -60,11 +61,17 @@ public class AddCmd extends LibraryCommand {
      */
     @Override
     public void execute(LibraryData data) {
-        if (data != null) {
-            data.loadData(Paths.get(argumentInput.trim()));
-        } else {
-            throw new NullPointerException(Utils.ERROR_DATA_NULL);
+        Objects.requireNonNull(data, Utils.ERROR_DATA_NULL);
+        Objects.requireNonNull(argumentInput, Utils.ERROR_NULL);
+
+        try {
+            data.loadData(Paths.get(argumentInput.strip()));
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        } catch (NullPointerException e) {
+            System.err.println(e.getMessage());
         }
+
     }
 
 }
