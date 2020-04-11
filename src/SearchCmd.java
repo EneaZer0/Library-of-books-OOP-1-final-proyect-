@@ -45,7 +45,7 @@ public class SearchCmd extends LibraryCommand {
 
         String[] numberOfWords = argumentInput.strip().split(Utils.WHITE_SPACE);
 
-        if ((numberOfWords.length == 1 && !argumentInput.contains(Utils.NEXT_LINE)) && !argumentInput.isBlank()) {
+        if ((numberOfWords.length == 1 && !argumentInput.contains(Utils.NEXT_LINE)  && !argumentInput.contains(Utils.NEXT_TAB)) && !argumentInput.isBlank()) {
             this.argumentInput = argumentInput;
             isParseArgument = true;
         }

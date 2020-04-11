@@ -20,7 +20,10 @@ public abstract class Utils {
      *  This is a constant of a jump to next line
      */
     public static final String NEXT_LINE = "\n";
-
+    /**
+     *  This is a constant of a jump to next line
+     */
+    public static final String NEXT_TAB = "\t";
 
     /** __________________________________ FORMAT __________________________________ */
 
