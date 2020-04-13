@@ -1,16 +1,26 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class RemoveCmdBasicTest extends RemoveCmdTest {
+    RemoveCmd testCommandByAuthors;
+    LibraryData data2;
+    AddCmd addDatabase1;
+    AddCmd addDatabase5;
+
 
     @Before
     public void setup() {
+        testCommandByAuthors=  new RemoveCmd("AUTHOR J.K. Rowling");
+        data2 =new LibraryData();
+        addDatabase1 = new AddCmd("books01.csv");
+        addDatabase5 = new AddCmd("books05.csv");
+
         testCommand = new RemoveCmd(TITLE_ARGUMENT + " " + TITLE_VALUE_ARGUMENT);
 
         testLibrary = new LibraryData();
@@ -105,6 +115,20 @@ public class RemoveCmdBasicTest extends RemoveCmdTest {
         assertFalse("Given Argument should not be accepted",result);
 
     }
+    @Test
+
+    public void testParseArgumentsSpaces10(){
+        boolean result = testCommand.parseArguments("AUTHOR\tword1");
+        assertTrue("Given Argument should  be accepted",result);
+
+    }
+    @Test
+
+    public void testParseArgumentsSpaces11(){
+        boolean result = testCommand.parseArguments("AUTHOR\nword1");
+        assertTrue("Given Argument should not be accepted",result);
+
+    }
 
     // ------------------------- execute tests --------------------
 
@@ -124,6 +148,85 @@ public class RemoveCmdBasicTest extends RemoveCmdTest {
         testCommand = new RemoveCmd(AUTHOR_ARGUMENT + " " + AUTHOR_VALUE_ARGUMENT);
         checkRemoveAuthorExecute(testCommand, testLibrary, AUTHOR_VALUE_ARGUMENT);
     }
+    @Test
+    public void testEffectiveRemove(){
+
+        testCommand.parseArguments("TITLE 1984");
+        LibraryData data =new LibraryData();
+
+        AddCmd add = new AddCmd("books05.csv");
+        add.execute(data);
+        int initialCount =data.getBookData().size();
+
+        testCommand.execute(data);
+        int final_count = data.getBookData().size();
+        Assert.assertEquals(initialCount-1,final_count);
+    }
+    @Test
+    public void testNotEffectiveRemove(){
+
+        testCommand.parseArguments("TITLE Paths to God: Living the Bhagavad Gita");
+        LibraryData data =new LibraryData();
+
+        AddCmd add = new AddCmd("books05.csv");
+        add.execute(data);
+        int initalCount = data.getBookData().size();
+
+        testCommand.execute(data);
+        int final_count_find = data.getBookData().size();
+        add.execute(data);
+        testCommand.parseArguments("TITLE Paths to GOD: Living the Bhagavad Gita");
+        testCommand.execute(data);
+        int notfoundCunt = data.getBookData().size();
+        Assert.assertEquals(initalCount-1,final_count_find);
+        Assert.assertEquals(initalCount,notfoundCunt);
+
+    }
+    @Test
+    public void testRemoveByAuthor(){
+        addDatabase1.execute(data2);
+        int initialCount = data2.getBookData().size();
+        testCommandByAuthors.execute(data2);
+        int finalCount = data2.getBookData().size();
+        assertEquals(initialCount-3,finalCount);
+    }
+    @Test
+    public void testRemoveByAuthor2(){
+        addDatabase1.execute(data2);
+        String expectedOutput = "3 books removed for author: J.K. Rowling";
+        CommandTestUtils.checkExecuteConsoleOutput(testCommandByAuthors,data2,expectedOutput);
+    }
+    @Test
+    public void testRemoveByAuthor3(){
+        addDatabase1.execute(data2);
+        String expectedOutput = "0 books removed for author: nonsense";
+        testCommandByAuthors.parseArguments("AUTHOR nonsense");
+        CommandTestUtils.checkExecuteConsoleOutput(testCommandByAuthors,data2,expectedOutput);
+    }
+    @Test
+    public void testRemoveByAuthor4(){
+        addDatabase1.execute(data2);
+        String expectedOutput = "0 books removed for author: nonsense";
+        testCommandByAuthors.parseArguments("AUTHOR nonsense");
+        CommandTestUtils.checkExecuteConsoleOutput(testCommandByAuthors,data2,expectedOutput);
+    }
+    @Test
+    public void testRemoveByAuthor5(){
+        addDatabase5.execute(data2);
+        testCommandByAuthors.execute(data2);
+        SearchCmd search = new SearchCmd("HARRY");
+        String expectedOutput="No hits found for search term: HARRY";
+        CommandTestUtils.checkExecuteConsoleOutput(search,data2,expectedOutput);
+    }
+    @Test
+    public void testRemoveByAuthor6CaseSensitive(){
+        addDatabase5.execute(data2);
+        testCommandByAuthors.parseArguments("AUTHOR J.k. ROWLING");
+        String expectedOutput = "0 books removed for author: J.k. ROWLING";
+        CommandTestUtils.checkExecuteConsoleOutput(testCommandByAuthors,data2,expectedOutput);
+    }
+
+
 
     @Test
     public void testExecuteRemoveAuthorConsoleOut() {
@@ -133,6 +236,7 @@ public class RemoveCmdBasicTest extends RemoveCmdTest {
         String expectedConsoleOutput = String.format(AUTHOR_REMOVE_MESSAGE, removedAuthors, AUTHOR_VALUE_ARGUMENT);
         CommandTestUtils.checkExecuteConsoleOutput(testCommand, testLibrary, expectedConsoleOutput);
     }
+
 
     @Test
     public void testExecuteNotFound() {

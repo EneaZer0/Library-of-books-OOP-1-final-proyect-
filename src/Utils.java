@@ -3,7 +3,7 @@ import java.util.*;
 /**
  *  This is a class Utils which contains constants used across the project
  */
-public abstract class Utils {
+public class Utils {
 
 
     /** __________________________________ SPACING __________________________________*/
@@ -133,6 +133,10 @@ public abstract class Utils {
 
 
     /** ################################## HELPER FUNCTIONS ################################## */
+
+    private Utils() {
+
+    }
 
     /** Helper function which is used in the classes: List, Remove & Search and display
      *  a feedback message to the user if there are no books loaded in the program.
@@ -351,7 +355,7 @@ public abstract class Utils {
             case Utils.TITLE:
                 for (int i = 0; i < list_of_books.size(); i++) {
                     String title = list_of_books.get(i).getTitle();
-                    if ((int) title.toUpperCase().charAt(0) >= (int) 'A' && (int) title.toUpperCase().charAt(0) <= (int) 'Z') {
+                    if ((int) title.toUpperCase().charAt(0) >= Utils.ASCII_CASE_FOR_A && (int) title.toUpperCase().charAt(0) <= Utils.ASCII_CASE_FOR_Z) {
                         list_of_titles.get((int)title.toUpperCase().charAt(0)- Utils.ASCII_CASE_FOR_A).add(title);
                     } else {
                         list_of_titles.get(list_of_titles.size()-Utils.GROUP_OF_NUMBERS).add(title);

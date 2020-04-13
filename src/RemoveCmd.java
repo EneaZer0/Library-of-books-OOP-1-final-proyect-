@@ -42,7 +42,7 @@ public class RemoveCmd extends LibraryCommand {
     protected boolean parseArguments(String argumentInput) {
         boolean isParsedArgument = false;
 
-
+        argumentInput = argumentInput.replaceAll("\\s+|\\t|\\n|\\r", Utils.WHITE_SPACE);
         argumentInputArray = argumentInput.strip().split(Utils.WHITE_SPACE);
         if ((argumentInputArray[0].equals(Utils.TITLE) || argumentInputArray[0].equals(Utils.AUTHOR)) && (argumentInputArray.length > 1)) {
             this.argumentInput = argumentInput;

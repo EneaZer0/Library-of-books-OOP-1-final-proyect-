@@ -3,14 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="21178750-99cf-42d1-87e8-a6e455d04a36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/negative.csv" beforeDir="false" afterPath="$PROJECT_DIR$/negative.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/BookEntryBasicTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RemoveCmdBasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RemoveCmdBasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/myLibrary/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/myLibrary/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/myLibrary/BookEntryBasicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/myLibrary/BookEntryBasicTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/myLibrary/RemoveCmdBasicTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/myLibrary/RemoveCmdBasicTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RemoveCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RemoveCmd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="240" />
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -69,12 +76,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddCmdBasicTest.testAddingBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddCmdBasicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myLibrary" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AddCmdBasicTest" />
-      <option name="METHOD_NAME" value="testAddingBooks" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,11 +103,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchCmdBasicTest.testParseArgumentsSpaces7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RemoveCmdBasicTest.testParseArgumentsSpaces10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myLibrary" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SearchCmdBasicTest" />
-      <option name="METHOD_NAME" value="testParseArgumentsSpaces7" />
+      <option name="MAIN_CLASS_NAME" value="RemoveCmdBasicTest" />
+      <option name="METHOD_NAME" value="testParseArgumentsSpaces10" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,10 +116,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in myLibrary" />
+        <item itemvalue="JUnit.RemoveCmdBasicTest.testParseArgumentsSpaces10" />
+        <item itemvalue="JUnit.AddCmdBasicTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BookEntryBasicTest.TestNullMembers" />
-        <item itemvalue="JUnit.AddCmdBasicTest.testAddingBooks" />
-        <item itemvalue="JUnit.SearchCmdBasicTest.testParseArgumentsSpaces7" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +178,9 @@
       <workItem from="1586526128945" duration="199000" />
       <workItem from="1586526454534" duration="5809000" />
       <workItem from="1586534380532" duration="1008000" />
-      <workItem from="1586630357901" duration="339000" />
+      <workItem from="1586630357901" duration="954000" />
+      <workItem from="1586684966261" duration="5150000" />
+      <workItem from="1586772420926" duration="1122000" />
     </task>
     <servers />
   </component>
@@ -223,38 +231,38 @@
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647018366" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586013726056" />
-    <state width="1875" height="273" key="GridCell.Tab.0.bottom" timestamp="1586630698236">
+    <state width="1875" height="319" key="GridCell.Tab.0.bottom" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586630698236" />
-    <state width="1875" height="273" key="GridCell.Tab.0.center" timestamp="1586630698236">
+    <state width="1875" height="319" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.0.center" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586630698236" />
-    <state width="1875" height="273" key="GridCell.Tab.0.left" timestamp="1586630698236">
+    <state width="1875" height="319" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.0.left" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586630698236" />
-    <state width="1875" height="273" key="GridCell.Tab.0.right" timestamp="1586630698236">
+    <state width="1875" height="319" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.0.right" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586630698236" />
-    <state width="1875" height="319" key="GridCell.Tab.1.bottom" timestamp="1586533681190">
+    <state width="1875" height="319" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.1.bottom" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="319" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586533681190" />
-    <state width="1875" height="319" key="GridCell.Tab.1.center" timestamp="1586533681190">
+    <state width="1875" height="319" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.1.center" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="319" key="GridCell.Tab.1.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586533681190" />
-    <state width="1875" height="319" key="GridCell.Tab.1.left" timestamp="1586533681190">
+    <state width="1875" height="319" key="GridCell.Tab.1.center/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.1.left" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="319" key="GridCell.Tab.1.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586533681190" />
-    <state width="1875" height="319" key="GridCell.Tab.1.right" timestamp="1586533681190">
+    <state width="1875" height="319" key="GridCell.Tab.1.left/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
+    <state width="1875" height="319" key="GridCell.Tab.1.right" timestamp="1586773543243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="319" key="GridCell.Tab.1.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586533681190" />
+    <state width="1875" height="319" key="GridCell.Tab.1.right/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586773543243" />
     <state x="774" y="453" key="ReplaceDuplicatesPrompt" timestamp="1585526946076">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -264,13 +272,17 @@
     </state>
     <state x="-1643" y="409" key="SettingsEditor/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886443194" />
     <state x="346" y="73" key="SettingsEditor/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1585493747274" />
-    <state x="581" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1586630368059">
+    <state width="779" height="1038" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1586687632860">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="779" height="1038" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586687632860" />
+    <state x="581" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1586772427828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1455" y="591" key="com.intellij.ide.util.TipDialog/-1920.353.1536.800/0.0.1368.872@-1920.353.1536.800" timestamp="1583886122103" />
     <state x="414" y="259" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1584055797182" />
     <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1360.305.1360.728@0.0.1920.1040" timestamp="1584647012881" />
-    <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586630368059" />
+    <state x="581" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.305.1360.728@0.0.1920.1040" timestamp="1586772427828" />
     <state x="-1422" y="660" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583886064920">
       <screen x="-1920" y="353" width="1536" height="800" />
     </state>
@@ -314,45 +326,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils.java</url>
-          <line>218</line>
+          <line>222</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils.java</url>
-          <line>203</line>
+          <line>207</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils.java</url>
-          <line>237</line>
+          <line>241</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils.java</url>
-          <line>280</line>
+          <line>284</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GroupCmd.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils.java</url>
-          <line>330</line>
+          <line>334</line>
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Tests/SearchCmdBasicTest.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ListCmd.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Library_of_books_OOP_1_final_proyect_$All_in_myLibrary.ic" NAME="All in myLibrary Coverage Results" MODIFIED="1586687495083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Library_of_books_OOP_1_final_proyect_$AddCmdBasicTest.ic" NAME="AddCmdBasicTest Coverage Results" MODIFIED="1586687471661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
